@@ -48,6 +48,10 @@ public class RegistrarMascotas extends javax.swing.JInternalFrame {
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
 
+        setClosable(true);
+        setMaximizable(true);
+        setTitle("Insertar Animal");
+
         jLabel1.setText("Nombre Cliente");
 
         jLabel2.setText("DNI Cliente");
