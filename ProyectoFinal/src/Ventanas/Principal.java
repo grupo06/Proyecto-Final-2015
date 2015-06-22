@@ -5,6 +5,8 @@
  */
 package Ventanas;
 
+import Clases.PersistenciaPersona;
+
 
 
 /**
