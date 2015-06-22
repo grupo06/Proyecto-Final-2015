@@ -74,6 +74,11 @@ public class RegistrarMascotas extends javax.swing.JInternalFrame {
         jLabel8.setText("Sexo");
 
         cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Hembra", "--" }));
+        cbSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSexoActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +222,10 @@ public class RegistrarMascotas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         LimpiarTabla();
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void cbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSexoActionPerformed
 public void  LimpiarTabla(){
         DefaultTableModel df = ((DefaultTableModel) TablaMascota.getModel());
         int a = df.getRowCount() -1;
