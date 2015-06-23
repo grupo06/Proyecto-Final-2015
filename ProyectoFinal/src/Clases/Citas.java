@@ -15,6 +15,8 @@ public class Citas {
    private String  Apelllido;
    private String  Telefono;
    private String  Correo;
+   private  String Fecha;
+   private  String Direccion;
 
     /**
      * @return the Nombre
@@ -70,6 +72,34 @@ public class Citas {
      */
     public void setCorreo(String Correo) {
         this.Correo = Correo;
+    }
+
+    /**
+     * @return the Fecha
+     */
+    public String getFecha() {
+        return Fecha;
+    }
+
+    /**
+     * @param Fecha the Fecha to set
+     */
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    /**
+     * @return the Direccion
+     */
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    /**
+     * @param Direccion the Direccion to set
+     */
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
  
     
