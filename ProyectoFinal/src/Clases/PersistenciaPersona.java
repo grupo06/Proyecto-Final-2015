@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author yefers
+ * @author wlber
  */
 public class PersistenciaPersona implements Serializable{
     
