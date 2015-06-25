@@ -39,7 +39,7 @@ public class ConsultarHistorialMedico extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
+            .addGap(0, 471, Short.MAX_VALUE)
         );
 
         pack();

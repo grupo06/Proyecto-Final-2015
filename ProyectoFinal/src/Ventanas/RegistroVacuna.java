@@ -35,10 +35,10 @@ public class RegistroVacuna extends javax.swing.JInternalFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnInsertar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -65,7 +65,7 @@ public class RegistroVacuna extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Veterinario Atorisado");
 
-        jButton1.setText("INSERTAR");
+        btnInsertar.setText("INSERTAR");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,7 +77,7 @@ public class RegistroVacuna extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setText("ELIMINAR");
+        btnEliminar.setText("ELIMINAR");
 
         jLabel5.setText("REGISTRO FECHA DE VACUNAS");
 
@@ -109,8 +109,8 @@ public class RegistroVacuna extends javax.swing.JInternalFrame {
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(62, 62, 62)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton2)))))
+                                    .addComponent(btnInsertar)
+                                    .addComponent(btnEliminar)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addComponent(jLabel5)))
@@ -139,12 +139,12 @@ public class RegistroVacuna extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(jButton1))
+                            .addComponent(btnInsertar))
                         .addGap(75, 75, 75)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                        .addComponent(btnEliminar)))
                 .addContainerGap(235, Short.MAX_VALUE))
         );
 
@@ -161,8 +161,8 @@ public class RegistroVacuna extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnInsertar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
