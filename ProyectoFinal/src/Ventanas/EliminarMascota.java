@@ -30,7 +30,7 @@ public class EliminarMascota extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtNombredeMascota = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaEliAnimal = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
@@ -39,7 +39,7 @@ public class EliminarMascota extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Nombre de Mascota:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaEliAnimal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -55,7 +55,7 @@ public class EliminarMascota extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaEliAnimal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,9 +88,9 @@ public class EliminarMascota extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TablaEliAnimal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtNombredeMascota;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author yefers
  */
-public class PersistenciaMascota implements Serializable{
+public class PersistenciaMascota{
     public static void SaveData(ArrayList<Mascota> listProducto) {
         try {
             FileOutputStream file = new FileOutputStream("Mascota.ser");

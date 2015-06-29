@@ -5,15 +5,30 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author yefers
  */
-public class Cliente {
+public class Cliente implements Serializable{
     public String nombre;
     public String apellidos;
     public String direccion;
     public String telefono;
+    public int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+   
+
+    
+    
 
     public String getNombre() {
         return nombre;

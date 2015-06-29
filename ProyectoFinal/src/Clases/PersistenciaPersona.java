@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author wlber
  */
-public class PersistenciaPersona implements Serializable{
+public class PersistenciaPersona{
     
         public static void SaveData(ArrayList<Persona> listProducto) {
         try {

@@ -5,19 +5,31 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author yefers
  */
-public class Mascota {
+public class Mascota implements Serializable{
+    private int id;
     private String nombreCli;
     private String Dni;
     private String nombreMas;
     private String color;
     private String raza;
     private String edad;
-    private String pezo;
+    private double pezo;
     private String sexo;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public String getNombreCli() {
         return nombreCli;
@@ -67,11 +79,11 @@ public class Mascota {
         this.edad = edad;
     }
 
-    public String getPezo() {
+    public double getPezo() {
         return pezo;
     }
 
-    public void setPezo(String pezo) {
+    public void setPezo(double pezo) {
         this.pezo = pezo;
     }
 

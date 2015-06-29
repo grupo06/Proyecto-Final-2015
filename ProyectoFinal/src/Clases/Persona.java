@@ -5,11 +5,13 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author yefers
  */
-public class Persona {
+public class Persona implements Serializable{
     private Cliente nombre;
     private Cliente apellidos;
     private Cliente direccion;

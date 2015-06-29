@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author yefers
  */
-public class PersistenciaCliente implements Serializable {
+public class PersistenciaCliente{
     
     public static void SaveData(ArrayList<Cliente> listProducto) {
         try {

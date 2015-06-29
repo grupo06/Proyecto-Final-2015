@@ -5,7 +5,11 @@
  */
 package Ventanas;
 
+import Clases.Cliente;
+import Clases.PersistenciaCliente;
 import java.beans.PersistenceDelegate;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,7 +34,7 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -53,15 +57,22 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Nombre", "Apellidos", "Direccion", "Telefono"
+                "Nombre", "Apellidos", "Direccion", "Telefono", "Campo1", "Campo2"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -76,7 +87,7 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
                         .addGap(58, 58, 58)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -91,7 +102,7 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
@@ -104,6 +115,24 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        ArrayList<Cliente> listado = PersistenciaCliente.LoadData();
+        String b = txtBuscar.getText();
+            try{
+                int b2 = Integer.parseInt(b);
+                String x = "";
+                for(Cliente cli : listado){
+                    int n = cli.getId();
+                        if(n == b2){
+                                x = x + cli.getId()+ "" + cli.getNombre() + "" + cli.getApellidos();
+                                
+                        }
+                        JOptionPane.showMessageDialog(this,x);
+                }
+            }catch(NumberFormatException e){
+                
+            
+            JOptionPane.showMessageDialog(this, "solo numeros enteros");
+            }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -113,6 +142,6 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
