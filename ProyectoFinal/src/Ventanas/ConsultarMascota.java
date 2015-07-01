@@ -5,6 +5,13 @@
  */
 package Ventanas;
 
+import Clases.Mascota;
+import Clases.PersistenciaMascota;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author yefers
@@ -28,16 +35,15 @@ public class ConsultarMascota extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         lblNombreMascota = new javax.swing.JLabel();
-        txtNombreMascota = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         btnConsultar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setTitle("Consultar Animal");
 
-        lblNombreMascota.setText("Nombre Mascota");
+        lblNombreMascota.setText("Id Mascota");
 
         btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -46,23 +52,12 @@ public class ConsultarMascota extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Raza", "Tipo", "Sexo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        jButton1.setText("Nueva Consulta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,13 +69,13 @@ public class ConsultarMascota extends javax.swing.JInternalFrame {
                         .addGap(71, 71, 71)
                         .addComponent(lblNombreMascota)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnConsultar)
-                            .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                        .addGap(127, 127, 127)
+                        .addComponent(btnConsultar)
+                        .addGap(91, 91, 91)
+                        .addComponent(jButton1)))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,12 +83,12 @@ public class ConsultarMascota extends javax.swing.JInternalFrame {
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombreMascota)
-                    .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(btnConsultar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultar)
+                    .addComponent(jButton1))
+                .addContainerGap(351, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,14 +96,38 @@ public class ConsultarMascota extends javax.swing.JInternalFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
+        ArrayList<Mascota> listado = PersistenciaMascota.LoadData();
+        String b = txtBuscar.getText();
+            try{
+                int b2 = Integer.parseInt(b);
+                String x = "";
+                for(Mascota cli : listado){
+                    int n = cli.getId();
+                        if(n == b2){
+                                x = x +"Id : "+ cli.getId()+ "\n"+ "NombreCli: "+cli.getNombreCli()+"\n" + "DNI: " + cli.getDni()+"\n" + "NomMascota: " + cli.getNombreMas()+"\n" + "Color : " + cli.getColor()
+                                                + "\n" + "Raza :" + cli.getRaza()+ "\n" + "Edad" + cli.getEdad()+"\n" + "Pezo" + cli.getPezo() + "\n" + "Sexo" + cli.getSexo();
+                                
+                        }
+                        JOptionPane.showMessageDialog(this,x);
+                }
+            }catch(NumberFormatException e){
+                
+            
+            JOptionPane.showMessageDialog(this, "solo numeros enteros");
+            }
     }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        txtBuscar.setText("");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblNombreMascota;
-    private javax.swing.JTextField txtNombreMascota;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
